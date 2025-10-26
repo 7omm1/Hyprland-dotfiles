@@ -1,0 +1,39 @@
+* {
+    font-family: "FiraCode Nerd Font", "Symbols Nerd Font", sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 0.6);
+}
+#workspaces, #clock, #custom-media, #custom-launcher, #hardware, #cpu, #memory, #network, #tray{
+    background: rgba(7, 2, 10, 0.8);
+    border-radius: 12px;
+    padding:0px 8px;
+    margin: 3px 5px;
+    color: #fff;
+    border: 0px solid #fff; 
+}
+#workspaces button.empty {
+    color:#fff;
+}
+#workspaces button {
+    color: #807d7d; 
+    border-radius: 20px;
+    padding:0px 0px;
+    font-size: 12px;
+    transition: all 0.2s ease;
+}
+#workspaces button.active {
+    color: #f4dc0b;
+    border-radius: 20px;
+}
+#workspaces button.urgent {
+    color: #bf616a;
+}
+
+
+
+
+

@@ -1,0 +1,90 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin": "0 0 0 0", //arriba,derecha,abajo,izquierda
+    "modules-left": ["custom/launcher","clock","hyprland/workspaces"],
+    "modules-center": ["custom/media"],
+    "modules-right": ["group/hardware","network"],
+
+    "custom/launcher": {
+        "format": " 󰣇 ",
+        "on-click": "wlogout",
+        "tooltip": false 
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": " 󰊠 ",
+            "2": " 󰊠 ",
+            "3": " 󰊠 ",
+            "4": " 󰊠 ",
+            "5": " 󰊠 ",
+            "default": " ",
+            "active": " 󰮯 "
+        },
+        "persistent-workspaces":{ 
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        }
+    },
+    "clock": {
+        "format": "{:%I:%M %p}",
+	    "rotate": 0,
+	    "format-alt": "{  %d·%m·%y}",
+        "tooltip-format": "<span>{calendar}</span>",
+        "calendar": {
+            	"mode": "month",
+            	"format": {
+        		"months": "<span color='#ffffff'><b>{}</b></span>",
+                	"days": "<span color='#ffffff'><b>{}</b></span>",
+                	"weekdays": "<span color='#ffffff'><b>{}</b></span>",
+                	"today": "<span color='#f25f12'><b>{}</b></span>"
+            	}
+	    }
+    },
+    "custom/media": {
+        "format": "󰓇 {}",
+        "max-length": 40,
+        "exec": "TITLE=$(playerctl metadata --format '{{title}}' | awk '{print substr($0,1,18) (length($0)>15?\"...\":\"\")}'); ARTIST=$(playerctl metadata --format '{{artist}}'); [ -n \"$TITLE\" ] && echo \"$TITLE — $ARTIST\" || echo 'No music'",
+	"interval": 1,
+        "on-click": "eww open music-widget",
+	"on-click-right":"eww close music-widget",
+        "tooltip":false
+    },
+    "group/hardware": {
+    	"orientation": "horizontal",
+	"drawer": {
+		"transition-duration": 500,
+		"transition-left-to-right": false
+	},
+    	"modules": [
+		"tray",
+      		"cpu",
+      		"memory"
+    	]
+    },
+    "network": {
+    	"format-ethernet": " ",
+    	"format-wifi": " ",
+    	"format-disconnected": "󰖪 ",
+    	"interval": 1,
+    	"tooltip": false
+    },
+    "cpu": {
+    	"format": "󰻠 {usage} %",
+    	"interval": 1,
+    	"tooltip": false
+    },
+    "memory": {
+    	"format": " {used:0.1f} GB",
+    	"interval": 1,
+    	"tooltip": false
+    },
+    "tray": {
+    	"icon-size": 16,
+    	"spacing": 8
+    }
+}
