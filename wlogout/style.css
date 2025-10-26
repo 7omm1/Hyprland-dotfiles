@@ -1,0 +1,69 @@
+* {
+    all: unset;
+    transition: 200ms ease;
+}
+
+window {
+    background-color: rgba(0, 0, 0, 0.7);
+    background-size: cover;
+}
+
+grid {
+    margin: 100px;
+}
+
+button {
+    background-color: rgba(255, 255, 255, 0.5);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30%;
+    min-width: 50px;
+    min-height: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+#shutdown {
+    background-image: url("shutdown.svg");
+}
+
+#reboot {
+    background-image: url("reboot.svg");
+}
+
+#suspend {
+    background-image: url("suspend.svg");
+}
+
+#hibernate {
+    background-image: url("hibernate.svg");
+}
+
+#lock {
+    background-image: url("lock.svg");
+}
+
+#logout {
+    background-image: url("logout.svg");
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+    -gtk-icon-transform: scale(1.05);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+button:active {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+label {
+    font-family: 'Fira Sans', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 8px;
+    color: black;
+}
